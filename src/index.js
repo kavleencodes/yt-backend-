@@ -6,7 +6,17 @@ import dotenv from "dotenv"//comfig also has to be done after this do the config
 dotenv.config({
     path:'./env'
 })
-connectDb()//connection should have been made but take a look at dotenv
+
+
+connectDb()
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{
+        console.log(`server running at ${process.env.PORT} `)
+    })
+})
+.catch((error)=>{
+    console.log("mongo db connection falied!!!", err)
+})//connection should have been made but take a look at dotenv
 
 
 

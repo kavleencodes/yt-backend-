@@ -110,3 +110,9 @@ userschema.methods.generateRefreshtoken=function(){
 
 
 export const User=mongoose.model("User",userschema)
+
+
+// cloudinary multer 
+// 1 we will take the file using multer and upload and store it in the local storage  server
+// 2 then we will use cloudinary, take the file on the local storage and put on server 
+// two step settings in production 
